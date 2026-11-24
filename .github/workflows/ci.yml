@@ -1,0 +1,17 @@
+name: My First CI Pipeline
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check website file
+        run: test -f index.html
+
+      - name: Pipeline success message
+        run: echo "CI Pipeline executed successfully!"
